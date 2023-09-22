@@ -80,10 +80,10 @@
                   <div class="col-lg-12">
                     <br>
                     <div class="white-button first-button scroll-to-section">
-                      <a href="#contact">Login Admin</a>
+                      <a href="../login.php">Login Admin</a>
                     </div>
                     <div class="white-button scroll-to-section">
-                      <a href="#contact">Login Pengguna</a>
+                      <a href="../login.php">Login Pengguna</a>
                     </div>
                   </div>
                 </div>

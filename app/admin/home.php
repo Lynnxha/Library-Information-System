@@ -1,7 +1,4 @@
 <?php
-//------------------------------::::::::::::::::::::------------------------------\\
-// Dibuat oleh FA Team di PT. Pacifica Raya Technology \\
-//------------------------------::::::::::::::::::::------------------------------\\
 session_start();
 if ($_SESSION['level'] != "Admin") {
     $_SESSION['masuk_dulu'] = "Silahkan masuk terlebih dahulu !!";

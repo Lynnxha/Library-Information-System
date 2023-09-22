@@ -1,3 +1,10 @@
+<?php
+session_start();
+if ($_SESSION['level'] != "Admin") {
+    $_SESSION['masuk_dulu'] = "Silahkan masuk terlebih dahulu !!";
+    header("location: ../../masuk");
+}
+?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

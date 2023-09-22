@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
-ErrorDocument 404 http://localhost/Perpustakaan/app/admin/home.php?module=pages/views/v_404
+ErrorDocument 404 http://localhost/libray/app/admin/home.php?module=pages/views/v_404
 
 RewriteRule ^dashboard$ home.php [L]
 RewriteRule ^anggota$ home.php?module=pages/views/v_anggota [L]
