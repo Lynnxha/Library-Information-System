@@ -37,14 +37,14 @@
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
-                            <?php
-                            include "../../config/koneksi.php";
-
-                            $no = 1;
-                            $query = mysqli_query($koneksi, "SELECT * FROM buku");
-                            while ($row = mysqli_fetch_assoc($query)) {
-                            ?>
                                 <tbody>
+                                    <?php
+                                    include "../../config/koneksi.php";
+
+                                    $no = 1;
+                                    $query = mysqli_query($koneksi, "SELECT * FROM buku");
+                                    while ($row = mysqli_fetch_assoc($query)) {
+                                    ?>
                                     <tr>
                                         <td><?= $no++; ?></td>
                                         <td><?= $row['judul_buku']; ?></td>
@@ -142,10 +142,10 @@
                                         <!-- /.modal-dialog -->
                                     </div>
                                     <!-- /. Modal Edit -->
+                                    <?php
+                                    }
+                                    ?>
                                 </tbody>
-                            <?php
-                            }
-                            ?>
                         </table>
                     </div>
                     <!-- /.box-body -->

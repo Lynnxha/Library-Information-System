@@ -9,20 +9,22 @@ if ($_GET['aksi'] == "masuk") {
 
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
-
+    
+    // Enkripsi kata sandi yang dimasukkan oleh pengguna menggunakan MD5
+    $password = md5($password);
+    
     $data = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username' AND password = '$password'");
-
+    
     $cek = mysqli_num_rows($data);
-
+    
     if ($cek > 0) {
         $row = mysqli_fetch_assoc($data);
-
+    
         if ($row['role'] == "Admin") {
-            // Jika level user yang login adalah admin maka arahkan user ke halaman admin
+            // Jika level user admin maka arahkan user ke halaman admin
             $_SESSION['id_user'] = $row['id_user'];
             $_SESSION['username'] = $username;
             $_SESSION['fullname'] = $row['fullname'];
-            $_SESSION['password'] = $row['password'];
             $_SESSION['status'] = "Login";
             $_SESSION['level'] = "Admin";
 
@@ -40,7 +42,7 @@ if ($_GET['aksi'] == "masuk") {
 
             header("location: ../admin");
         } else if ($row['role'] == "Anggota") {
-            // Jika level user yang login adalah user maka arahkan user kehalaman user
+            // Jika level user adalah user maka arahkan user kehalaman user
             $_SESSION['id_user'] = $row['id_user'];
             $_SESSION['username'] = $username;
             $_SESSION['fullname'] = $row['fullname'];
@@ -78,7 +80,7 @@ if ($_GET['aksi'] == "masuk") {
     $fullname = $_POST['funame'];
     $username = addslashes(strtolower($_POST['uname']));
     $username1 = str_replace(' ', '', $username);
-    $password = $_POST['passw'];
+    $password = md5($_POST['passw']);
     $kls = $_POST['kelas'];
     $jrs = $_POST['jurusan'];
     $kelas = $kls . $jrs;

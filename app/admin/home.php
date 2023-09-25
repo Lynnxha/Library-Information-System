@@ -38,8 +38,8 @@ if ($_SESSION['level'] != "Admin") {
     <link rel="stylesheet" href="../../assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <!-- -->
     <link rel="stylesheet" href="../../assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-    <!-- Icon -->
-    <!-- <link rel="icon" type="icon" href="../../assets/dist/img/icon-app.png"> -->
+    <!-- Favicon -->
+    <link rel="icon" type="icon" href="../../assets/dist/img/logo_app.png">
     <!-- Custom -->
     <link rel="stylesheet" href="../../assets/dist/css/custom.css">
     <!-- Toastr -->

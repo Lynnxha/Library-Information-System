@@ -1,4 +1,9 @@
+<?php
+ include "../config/koneksi.php";
 
+ $sql = mysqli_query($koneksi, "SELECT * FROM identitas");
+ $row1 = mysqli_fetch_assoc($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,11 +13,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <title>Dashboard</title>
+    <!-- Favicon -->
+    <link rel="icon" type="icon" href="../assets/dist/img/logo_app.png">
+
+    <!-- Title Website -->
+    <title><?= $row1['nama_app']; ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -48,7 +59,7 @@
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <a href="../landing" class="logo">
-              <img src="assets/images/logo.png" alt="Chain App Dev">
+            <img src="../assets/dist/img/logo_app.png" alt="<?= $row1['nama_app']; ?>" style="width: 50px;">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
@@ -149,30 +160,13 @@
  
   <footer id="newsletter">
     <div class="container mt-5">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-lg-3">
           <div class="footer-widget">
-            <h4>Contact Us</h4>
-            <p>Rio de Janeiro - RJ, 22795-008, Brazil</p>
-            <p><a href="#">010-020-0340</a></p>
-            <p><a href="#">info@company.co</a></p>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="footer-widget">
-            <h4>About Us</h4>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Testimonials</a></li>
-              <li><a href="#">Pricing</a></li>
-            </ul>
-            <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Testimonials</a></li>
-              <li><a href="#">Pricing</a></li>
-            </ul>
+            <h4><?= $row1['nama_app']; ?></h4>
+            <p><?= $row1['alamat_app']; ?></p>
+            <p><?= $row1['nomor_hp']; ?></p>
+            <p><a href="mailto:<?= $row1['email_app']; ?>"><?= $row1['email_app']; ?></a></p>
           </div>
         </div>
         <div class="col-lg-3">
@@ -192,19 +186,10 @@
             </ul>
           </div>
         </div>
-        <div class="col-lg-3">
-          <div class="footer-widget">
-            <h4>About Our Company</h4>
-            <div class="logo">
-              <img src="assets/images/white-logo.png" alt="">
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-          </div>
-        </div>
         <div class="col-lg-12">
           <div class="copyright-text">
-            <p>Copyright © 2022 Chain App Dev Company. All Rights Reserved. 
-          <br>Design: <a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a></p>
+            <p>Copyright © <?php echo date('Y'); ?> All Rights Reserved. 
+          <!-- <br>Design: <a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a></p> -->
           </div>
         </div>
       </div>
